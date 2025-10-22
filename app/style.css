@@ -1,0 +1,412 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Color Tokens - Purple & Black Theme */
+  --color-background: 10 10 15;
+  --color-foreground: 250 250 255;
+
+  --color-primary: 147 51 234;
+  --color-primary-foreground: 255 255 255;
+
+  --color-secondary: 88 28 135;
+  --color-secondary-foreground: 255 255 255;
+
+  --color-accent: 192 132 252;
+  --color-accent-foreground: 10 10 15;
+
+  --color-muted: 30 27 45;
+  --color-muted-foreground: 200 200 210;
+
+  --color-card: 20 20 30;
+  --color-card-foreground: 250 250 255;
+
+  --color-border: 88 28 135;
+
+  --radius-lg: 1rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, rgb(88 28 135) 0%, rgb(147 51 234) 100%);
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent;
+}
+
+:root {
+  --bs-primary: #7c3aed;
+  --bs-primary-rgb: 124, 58, 237;
+  --bs-secondary: #581c87;
+  --bs-secondary-rgb: 88, 28, 135;
+  --bs-dark: #0a0a0f;
+  --bs-dark-rgb: 10, 10, 15;
+  --bs-light: #f5f3ff;
+  --bs-light-rgb: 245, 243, 255;
+  --bs-body-bg: #0a0a0f;
+  --bs-body-color: #fafaff;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #fafaff;
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom purple and black theme colors */
+.bg-purple-primary {
+  background-color: #7c3aed !important;
+}
+
+.bg-purple-secondary {
+  background-color: #581c87 !important;
+}
+
+.bg-purple-dark {
+  background: linear-gradient(135deg, #0a0a0f 0%, #1e1b2e 50%, #581c87 100%);
+}
+
+.bg-dark-custom {
+  background-color: #0a0a0f !important;
+}
+
+.text-purple-light {
+  color: #c084fc !important;
+}
+
+.navbar-dark-custom {
+  background-color: #1a1a24 !important;
+}
+
+.btn-purple {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
+}
+
+.card-dark {
+  background-color: #1a1a24;
+  border: 1px solid #581c87;
+  color: #fafaff;
+}
+
+.accordion-dark .accordion-item {
+  background-color: #1a1a24;
+  border: 1px solid #581c87;
+  color: #fafaff;
+}
+
+.accordion-dark .accordion-button {
+  background-color: #581c87;
+  color: #fafaff;
+}
+
+.accordion-dark .accordion-button:not(.collapsed) {
+  background-color: #7c3aed;
+  color: #fafaff;
+}
+
+.hero-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wave::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230a0a0f' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat;
+  background-size: cover;
+}
+
+/* Fix navbar collapse issue - prevent flickering and disappearing */
+.navbar-collapse {
+  transition: none !important;
+}
+
+.navbar-collapse.collapsing {
+  transition: height 0.35s ease !important;
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(124, 58, 237, 0.5);
+}
+
+/* Ensure navbar stays visible */
+.navbar {
+  z-index: 1030;
+}
+
+/* Purple light background for awareness cards */
+.bg-purple-light {
+  background-color: #f5f3ff !important;
+}
+
+/* Added text-purple class for navbar logo */
+.text-purple {
+  color: #9333ea !important;
+}
+
+/* Added custom navbar styles to replace Bootstrap navbar */
+.navbar-custom {
+  background: linear-gradient(135deg, #1a1a24 0%, #2d1b4e 100%);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #c084fc;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navbar-menu li {
+  margin: 0;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.navbar-menu a:hover {
+  color: #c084fc;
+}
+
+.desktop-menu {
+  display: flex;
+}
+
+.mobile-menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-button span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  background: linear-gradient(135deg, #1a1a24 0%, #2d1b4e 100%);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.mobile-menu li {
+  margin: 0;
+}
+
+.mobile-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.mobile-menu a:hover {
+  background-color: rgba(192, 132, 252, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
